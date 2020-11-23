@@ -5,7 +5,6 @@ This project demonstrates the use of k mean clustering for image compression
 
 ******************************************************************************************
 
-% Original Image
 We first start with an image of a car. The image is converted to grayscale and a 512 x 1024 subsection is shown below:
 
 ![Original Car IMAGE](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/car_original.JPG)
@@ -25,3 +24,11 @@ The whole image is now represented using only those values in the cluster. Hence
 Below is part of the original image compared to the compressed version:
 
 ![Original vs. Qunatized IMAGE](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/orig_vs_quant.JPG)
+
+******************************************************************************************
+
+In this part, we vary the rate (R) value from 0 to 1. As we vary R, the number of clusters C also changes because C=2(R*P^2). For each value of R (and thereby C) we do the clustering and the Vector Quantization again. For each of these R we calculate the distortion as the mean squared error between the original image and the quantized image.
+
+![Rate vs Distortion](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/rate_vs_distortion.JPG)
+
+We observe that as we increase the rate R, the distortion is monotonically decreasing. This happens because as we increase R and keep patch size constant, the number of clusters C increase.
