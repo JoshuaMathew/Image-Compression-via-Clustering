@@ -31,4 +31,14 @@ In this part, we vary the rate (R) value from 0 to 1. As we vary R, the number o
 
 ![Rate vs Distortion](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/rate_vs_distortion.JPG)
 
-We observe that as we increase the rate R, the distortion is monotonically decreasing. This happens because as we increase R and keep patch size constant, the number of clusters C increase.
+We observe that as we increase the rate R, the distortion is monotonically decreasing. This happens because as we increase R and keep patch size constant, the number of clusters C increase. As more clusters are used to represent the same image, the reconstructed image gets closer to the original image and hence the distortion is less. 
+
+Note: We need to choose R values such that R*P2 should be an integer. Here we have taken R=[0.2, 0.4, 0.6, 0.8, 1] and P=2
+
+******************************************************************************************
+
+Next, we vary the patch size (P). Earlier we used P=2 to generate a 2x2 patch size. Now, we use P = [2, 4, 8] and R = 0.08 to generate patch sizes of 2x2, 4x4, and 8x8. Below is a plot of the distortion for each patch size
+
+![P vs Distortion](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/patch_vs_distort.JPG)
+
+As the patch size is increased the distortion decreases. We would expect that with increasing patch size the distortion would increase because we are approximating a larger portion of the image. However, as we increase the patch size the number of clusters also increases at an even faster rate and having more clusters decreases the distortion because we are dividing the image into more clusters and hence decreasing the level of approximation of the image.
