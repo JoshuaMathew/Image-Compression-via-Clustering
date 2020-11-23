@@ -42,3 +42,16 @@ Next, we vary the patch size (P). Earlier we used P=2 to generate a 2x2 patch si
 ![P vs Distortion](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/patch_vs_distort.JPG)
 
 As the patch size is increased the distortion decreases. We would expect that with increasing patch size the distortion would increase because we are approximating a larger portion of the image. However, as we increase the patch size the number of clusters also increases at an even faster rate and having more clusters decreases the distortion because we are dividing the image into more clusters and hence decreasing the level of approximation of the image.
+
+
+Till now we have considered that all the clusters have equal probability of appearing in the image. However in reality, some clusters appear more often than the others. Therefore, in practical applications we usually represent the clusters which appear frequently with lesser number of bits. Information theory tells us that we can get an average coding length of  if we take into consideration that some symbols appear more often than others.
+In this part we compare the average coding rate for uniform probability and the actual probability.
+
+******************************************************************************************
+
+Till now we have considered that all the clusters have equal probability of appearing in the image. However in reality, some clusters appear more often than the others. Therefore, in practical applications we usually represent the clusters which appear frequently with fewer number of bits. Information theory tells us that we can get an average coding length of if we take into consideration that some symbols appear more often than others. 
+
+By taking advantage of the fact that some clusters appear more than others, the coding rate for compression can be reduced. For the case that P=2 and R=1 a coding rate of 0.87 bits per pixel can be achieved with entropy coding, this is a reduction of 13% in coding rate. 
+
+******************************************************************************************
+
