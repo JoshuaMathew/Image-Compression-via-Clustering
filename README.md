@@ -65,3 +65,20 @@ Visually it is obvious that using the clusters from the training image on the te
 
 ******************************************************************************************
 
+In this part of the project we compare using k-means to mini-batch k-means for image compression. Mini-batch k-means is a variant of the k-means algorithm which uses mini-batches to reduce the computation time, while still attempting to optimise the same objective function. Mini-batches are subsets of the input data, randomly sampled in each training iteration. These mini-batches reduce the amount of computation required to converge to a local solution.
+
+In mini-batch k-means, samples are drawn randomly from the dataset, to form a mini-batch. These are then assigned to the nearest centroid. In the second step, the centroids are updated. In contrast to k-means, this is done on a per-sample basis. For each sample in the mini-batch, the assigned centroid is updated by taking the streaming average of the sample and all previous samples assigned to that centroid.
+
+![mini](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/kmeans_vs_mini.JPG)
+
+
+|  | Distortion  | Runtime (seconds)  |
+| :---:   | :-: | :-: |
+| k-means | 55  | 21  |
+| :---:   | :-: | :-: |
+| Mini-batch k-means | 59 | 15 |
+Distortion and Run Time Comparison
+
+As expected the mini-batch k-means algorithm was faster but at the expense of a slight increase in distortion. 
+
+
