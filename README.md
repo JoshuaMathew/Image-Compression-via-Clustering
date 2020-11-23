@@ -59,11 +59,8 @@ For this part of the project the k-means clusters were computed using the same t
 
 ![Car2 test](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/car2_original.JPG)
                                         
-                                        Test Image
 ![Car2quant](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/car2_quant.JPG)
                       
-                      Quantized Test Image Using Training Image Clusters
-
 Visually it is obvious that using the clusters from the training image on the test image results in a much more lossy compression than training and compressing the same image. The distortion for the training image is 50 and the distortion on the test image is 112. As expected the distortion increases greatly because the k-means algorithm was trained on a completely different image resulting in clusters that do not fit the test image well. 
 
 ******************************************************************************************
