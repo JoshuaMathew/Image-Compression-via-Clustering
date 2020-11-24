@@ -1,5 +1,5 @@
 
-# VECTOR QUANTIZATION VIA K-MEANS CLUSTERING:
+# VECTOR QUANTIZATION VIA K-MEANS CLUSTERING
 
 This project demonstrates the use of k mean clustering for image compression
 
