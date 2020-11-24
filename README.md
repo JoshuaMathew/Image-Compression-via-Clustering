@@ -1,16 +1,16 @@
 ******************************************************************************************
-#VECTOR QUANTIZATION VIA K-MEANS CLUSTERING:
+# VECTOR QUANTIZATION VIA K-MEANS CLUSTERING:
 
 This project demonstrates the use of k mean clustering for image compression
 
 ******************************************************************************************
-# Image Preprocessing
+## Image Preprocessing
 We first start with an image of a car. The image is converted to grayscale and a 512 x 1024 subsection is shown below:
 
 ![Original Car IMAGE](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/car_original.JPG)
 
 ******************************************************************************************
-### Compression With k-means Clustering
+## Compression With k-means Clustering
 
 After preprocessing the image, we define a "patch" in the image with dimensions PxP, where P=2. This value of will work well for the dimensions of the above M X N image since they are also powers of 2.
 
