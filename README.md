@@ -75,8 +75,8 @@ In mini-batch k-means, samples are drawn randomly from the dataset, to form a mi
 |  | Distortion  | Runtime (seconds)  |
 | :---:   | :-: | :-: |
 | k-means | 55  | 21  |
-| :---:   | :-: | :-: |
 | Mini-batch k-means | 59 | 15 |
+
 Distortion and Run Time Comparison
 
 As expected the mini-batch k-means algorithm was faster but at the expense of a slight increase in distortion. 
