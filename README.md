@@ -6,7 +6,7 @@ This project demonstrates the use of k mean clustering for image compression
 ## Image Preprocessing
 We first start with an image of a car. The image is converted to grayscale and a 512 x 1024 subsection is shown below:
 
-![Original Car IMAGE](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/car_original.JPG)
+![Original Car IMAGE](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/images/car_original.JPG)
 
 ## Compression With k-means Clustering
 
@@ -22,12 +22,12 @@ The whole image is now represented using only those values in the cluster. Hence
 
 Below is part of the original image compared to the compressed version:
 
-![Original vs. Qunatized IMAGE](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/orig_vs_quant.JPG)
+![Original vs. Qunatized IMAGE](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/images/orig_vs_quant.JPG)
 
 ## Rate vs. Distortion
 In this part, we vary the rate (R) value from 0 to 1. As we vary R, the number of clusters C also changes because C=2(R*P^2). For each value of R (and thereby C) we do the clustering and the Vector Quantization again. For each of these R we calculate the distortion as the mean squared error between the original image and the quantized image.
 
-![Rate vs Distortion](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/rate_vs_distortion.JPG)
+![Rate vs Distortion](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/images/rate_vs_distortion.JPG)
 
 We observe that as we increase the rate R, the distortion is monotonically decreasing. This happens because as we increase R and keep patch size constant, the number of clusters C increase. As more clusters are used to represent the same image, the reconstructed image gets closer to the original image and hence the distortion is less. 
 
@@ -37,7 +37,7 @@ Note: We need to choose R values such that R*P2 should be an integer. Here we ha
 
 Next, we vary the patch size (P). Earlier we used P=2 to generate a 2x2 patch size. Now, we use P = [2, 4, 8] and R = 0.08 to generate patch sizes of 2x2, 4x4, and 8x8. Below is a plot of the distortion for each patch size
 
-![P vs Distortion](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/patch_vs_distort.JPG)
+![P vs Distortion](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/images/patch_vs_distort.JPG)
 
 As the patch size is increased the distortion decreases. We would expect that with increasing patch size the distortion would increase because we are approximating a larger portion of the image. However, as we increase the patch size the number of clusters also increases at an even faster rate and having more clusters decreases the distortion because we are dividing the image into more clusters and hence decreasing the level of approximation of the image.
 
@@ -54,9 +54,9 @@ By taking advantage of the fact that some clusters appear more than others, the 
 
 For this part of the project the k-means clusters were computed using the same training image of the car used for the earlier parts of the project. These clusters were used to compress a different test image of a different car. This was done using P=2 and K=1. We expect that the distortion will increase because the clusters are being computed from a completely different image than is being compressed. The test image and quantized (decompressed) version are shown below.
 
-![Car2 test](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/car2_original.JPG)
+![Car2 test](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/images/car2_original.JPG)
                                         
-![Car2quant](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/car2_quant.JPG)
+![Car2quant](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/images/car2_quant.JPG)
                       
 Visually it is obvious that using the clusters from the training image on the test image results in a much more lossy compression than training and compressing the same image. The distortion for the training image is 50 and the distortion on the test image is 112. As expected the distortion increases greatly because the k-means algorithm was trained on a completely different image resulting in clusters that do not fit the test image well. 
 
@@ -65,7 +65,7 @@ In this part of the project we compare using k-means to mini-batch k-means for i
 
 In mini-batch k-means, samples are drawn randomly from the dataset, to form a mini-batch. These are then assigned to the nearest centroid. In the second step, the centroids are updated. In contrast to k-means, this is done on a per-sample basis. For each sample in the mini-batch, the assigned centroid is updated by taking the streaming average of the sample and all previous samples assigned to that centroid.
 
-![mini](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/kmeans_vs_mini.JPG)
+![mini](https://github.com/JoshuaMathew/Image-Compression-via-Clustering/blob/main/images/kmeans_vs_mini.JPG)
 
 
 |  | Distortion  | Runtime (seconds)  |
